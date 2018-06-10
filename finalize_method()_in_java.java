@@ -1,9 +1,10 @@
-
+----------------------------------------------------------------------------------------------------------------------------
+//CASE1: JVM calls garbage collector i.e.finalize() and no exception occurs in finalize() 	
 public class finalize_method {
     public static void main(String[] args) {
         finalize_method fm= new finalize_method();
         fm=null;    
-        System.gc();
+        System.gc();    //JVM calls garbage collector i.e.finalize() and no exception occurs in finalize()
     }
    
     @Override
@@ -20,12 +21,16 @@ run:
 garbage collector calledBUILD SUCCESSFUL (total time: 0 seconds)
 
 */
-
+---------------------------------------------------------------------------------------------------------------------------
+/*CASE2: JVM calls garbage collector i.e.finalize() and exception occurs in finalize(), JVM ignores it and 
+	normal termination is followed */
+	
 public class finalize_method {
     public static void main(String[] args) {
         finalize_method fm= new finalize_method();
         fm=null;    
-        System.gc();
+        System.gc();    //JVM calls garbage collector i.e.finalize() and exception occurs in finalize(), JVM ignores it
+	                //and normal termination is followed
     }
    
     @Override
@@ -43,12 +48,14 @@ run:
 garbage collector called
 BUILD SUCCESSFUL (total time: 0 seconds)
 */
-
+----------------------------------------------------------------------------------------------------------------------------
+//CASE3: when you explicitly calls garbage collector i.e.finalize() and no exception occurs in finalize()
+	
 public class finalize_method {
     public static void main(String[] args) {
         finalize_method fm= new finalize_method();
       
-         fm.finalize();
+         fm.finalize();    //when you explicitly calls garbage collector i.e.finalize() and no exception occurs in finalize()
       
     }
    
@@ -68,12 +75,16 @@ run:
 garbage collector called
 BUILD SUCCESSFUL (total time: 0 seconds)
 */
+----------------------------------------------------------------------------------------------------------------------------
+/*CASE3: when you explicitly calls garbage collector i.e.finalize() and exception occurs in finalize()
+	                  exception is raised and it is not ignored at all */
 
-public class finalize_method {
+   public class finalize_method {
     public static void main(String[] args) {
         finalize_method fm= new finalize_method();
       
-         fm.finalize();
+         fm.finalize();  //when you explicitly calls garbage collector i.e.finalize() and exception occurs in finalize()
+	                  // exception is raised and it is not ignored at all
       
     }
    
@@ -97,3 +108,4 @@ BUILD FAILED (total time: 0 seconds)
 
 */
 
+----------------------------------------------------------------------------------------------------------------------------
