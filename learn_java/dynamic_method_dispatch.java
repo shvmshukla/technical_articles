@@ -1,4 +1,4 @@
-
+/*
 Method overriding is one of the ways in which Java supports Runtime Polymorphism. 
 Dynamic method dispatch is the mechanism by which a call to an overridden method is resolved at run time, 
 rather than compile time.
@@ -12,6 +12,7 @@ determines which version of an overridden method will be executed
 
 3) A superclass reference variable can refer to a subclass object. This is also known as upcasting. 
 Java uses this fact to resolve calls to overridden methods at run time.
+*/
 -----------------------------------------------------------------------------------------------------------------------------
 class A
 {
@@ -115,14 +116,15 @@ public class Test
     }
 }
 
+/*
 Run on IDE
 Output:
 
-10
+10    
 
 Explanation : In above program, both the class A(super class) and B(sub class) have a common variable ‘x’. Now we make 
 object of class B, referred by ‘a’ which is of type of class A. Since variables are not overridden, so the statement “a.x” 
 will always refer to data member of super class.
-
+*/
 
 
